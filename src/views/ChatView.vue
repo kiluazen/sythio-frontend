@@ -71,9 +71,11 @@ const handleSubmit = async () => {
     // Add user message to UI immediately
     const userMessage: Message = {
       id: crypto.randomUUID(),
-      role: 'user' as MessageRole,
+      chat_id: currentChat.value.id,
+      role: 'user',
       content,
       created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
       is_streaming: false
     }
     messages.value.push(userMessage)
@@ -81,9 +83,11 @@ const handleSubmit = async () => {
     // Add assistant placeholder
     const assistantMessage: Message = {
       id: crypto.randomUUID(),
-      role: 'assistant' as MessageRole,
+      chat_id: currentChat.value.id,
+      role: 'assistant',
       content: '',
       created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
       is_streaming: true
     }
     messages.value.push(assistantMessage)
