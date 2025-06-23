@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Test if Tailwind is working */
+.test-tailwind {
+  @apply bg-red-500 p-4;
+}
